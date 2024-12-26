@@ -1,33 +1,25 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
 export default function decorate(block) {
-  const ul = document.createElement('ul');
-  ul.className = 'vaccine-finder-list';
+  const container = document.createElement('div');
+  container.className = 'vaccine-finder-container';
 
   [...block.children].forEach((row) => {
-    const li = document.createElement('li');
-    li.className = 'vaccine-finder-item';
-
-    while (row.firstElementChild) {
-      const child = row.firstElementChild;
-      if (child.querySelector('img')) {
-        const img = child.querySelector('img');
-        const imgUrl = img.src;
-        li.style.backgroundImage = `url(${imgUrl})`;
-        li.style.backgroundSize = 'cover';
-        li.style.backgroundPosition = 'center';
-        child.remove(); // Remove the image element
-      } else {
-        const bodyDiv = document.createElement('div');
-        bodyDiv.className = 'vaccine-finder-body';
-        bodyDiv.append(child);
-        li.append(bodyDiv);
-      }
+    const img = row.querySelector('img');
+    if (img) {
+      const imgUrl = img.src;
+      container.style.backgroundImage = `url(${imgUrl})`;
+      container.style.backgroundSize = 'cover';
+      container.style.backgroundPosition = 'center';
+      img.remove(); // Remove the image element
     }
 
-    ul.append(li);
+    const content = document.createElement('div');
+    content.className = 'vaccine-finder-content';
+    content.append(...row.children);
+    container.append(content);
   });
 
   block.textContent = '';
-  block.append(ul);
+  block.append(container);
 }
