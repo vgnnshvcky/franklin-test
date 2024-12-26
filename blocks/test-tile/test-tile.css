@@ -1,0 +1,50 @@
+.test-tile-container {
+  display: flex;
+  gap: 24px;
+  padding: 20px;
+  background-color: #004d40;
+}
+
+.test-tile-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.test-tile-card-content {
+  padding: 20px;
+}
+
+.test-tile-card-content h2 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+.test-tile-card-content p {
+  margin: 0 0 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.test-tile-card-content button {
+  background-color: #ffc107;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #333;
+  font-weight: bold;
+}
+
+.test-tile-card-image {
+  background-size: cover;
+  background-position: center;
+  height: 150px;
+}
