@@ -1,42 +1,30 @@
-.vaccine-finder-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 24px;
-}
-
-.vaccine-finder-item {
-  border: 1px solid #dadada;
-  background-color: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  height: 200px; /* Adjust height as needed */
+.vaccine-finder-container {
   position: relative;
+  padding: 40px;
+  min-height: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
 }
 
-.vaccine-finder-body {
-  padding: 16px;
-  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+.vaccine-finder-content {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text */
+  padding: 20px;
+  border-radius: 8px;
 }
 
-.vaccine-finder-body p {
+.vaccine-finder-content p {
   margin: 0;
-  color: #333;
   font-size: 16px;
   line-height: 1.5;
 }
 
-.vaccine-finder-body a {
-  color: #007bff;
+.vaccine-finder-content a {
+  color: #00f;
   text-decoration: none;
 }
 
-.vaccine-finder-body a:hover {
+.vaccine-finder-content a:hover {
   text-decoration: underline;
 }
