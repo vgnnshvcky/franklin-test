@@ -1,5 +1,5 @@
 /* Hero Container */
-.hero-wrapper {
+main > .section > div.hero-wrapper {
     padding: 0;
 }
 .block .hero-container {
@@ -7,7 +7,7 @@
   grid-template-columns: 1fr 1fr; /* Two equal columns */
   gap: 24px;
   align-items: center;
-  padding: 40px;
+  padding: 0;
   background-color: #fff;
   border-radius: 8px;
 }
