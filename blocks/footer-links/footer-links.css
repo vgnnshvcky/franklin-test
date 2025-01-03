@@ -1,0 +1,46 @@
+.footer-links-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr; /* Two-column layout: 1 part for links, 3 parts for details */
+  gap: 20px;
+  padding: 20px 40px; /* Padding around the entire container */
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+.footer-links-left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Space between links */
+}
+
+.footer-link {
+  text-decoration: none;
+  font-weight: bold;
+  color: #333;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.footer-links-right {
+  line-height: 1.6; /* Improve readability */
+  color: #555; /* Slightly lighter text for details */
+}
+
+.footer-detail {
+  margin-bottom: 16px; /* Space between paragraphs */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .footer-links-container {
+    grid-template-columns: 1fr; /* Stack columns vertically */
+    gap: 16px;
+  }
+
+  .footer-links-left {
+    margin-bottom: 20px; /* Add space below links when stacked */
+  }
+}
