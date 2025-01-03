@@ -1,7 +1,8 @@
 .block .assistance-container {
   display: flex;
+  align-items: center;
   background-color: #e0f7fa;
-  padding: 40px;
+  padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -18,6 +19,7 @@
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .block .assistance-content p,
