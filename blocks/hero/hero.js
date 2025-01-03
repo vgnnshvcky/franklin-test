@@ -3,14 +3,13 @@ export default function decorate(block) {
   const container = document.createElement('div');
   container.className = 'hero-container';
 
-  // Extract content from the block
+  // Extract elements from the block
   const picture = block.querySelector('picture');
-  const heading = block.querySelector('h1, h2');
-  const description = block.querySelector('p');
+  const h1 = block.querySelector('h1');
+  const h2 = block.querySelector('h2');
   const button = block.querySelector('a');
-  const form = block.querySelector('form');
 
-  // Add image to the hero container
+  // Create the left section for the image
   if (picture) {
     const imageWrapper = document.createElement('div');
     imageWrapper.className = 'hero-image';
@@ -18,17 +17,16 @@ export default function decorate(block) {
     container.appendChild(imageWrapper);
   }
 
-  // Add text content (heading, description, etc.)
+  // Create the right section for text and button
   const contentWrapper = document.createElement('div');
   contentWrapper.className = 'hero-content';
 
-  if (heading) contentWrapper.appendChild(heading);
-  if (description) contentWrapper.appendChild(description);
+  if (h1) contentWrapper.appendChild(h1);
+  if (h2) contentWrapper.appendChild(h2);
   if (button) {
-    button.className = 'hero-button';
+    button.classList.add('hero-button');
     contentWrapper.appendChild(button);
   }
-  if (form) contentWrapper.appendChild(form);
 
   container.appendChild(contentWrapper);
 
@@ -36,4 +34,3 @@ export default function decorate(block) {
   block.textContent = '';
   block.appendChild(container);
 }
-
