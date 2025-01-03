@@ -1,5 +1,5 @@
 /* Hero Container */
-.hero-container {
+.block .hero-container {
   display: grid;
   grid-template-columns: 1fr 1fr; /* Two-column layout by default */
   gap: 24px;
@@ -90,7 +90,7 @@
 
 /* Responsive Styling */
 @media (max-width: 768px) {
-  .hero-container {
+  .block .hero-container {
     grid-template-columns: 1fr; /* Stack columns vertically */
     text-align: center;
     padding: 24px;
