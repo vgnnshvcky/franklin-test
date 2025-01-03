@@ -1,4 +1,7 @@
 /* Hero Container */
+.hero-wrapper {
+    padding: 0;
+}
 .block .hero-container {
   display: grid;
   grid-template-columns: 1fr 1fr; /* Two equal columns */
