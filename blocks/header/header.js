@@ -1,15 +1,10 @@
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
-const isDesktop = window.matchMedia('(min-width: 900px)');
-
-function toggleMenu(nav, navSections, forceExpanded = null) {
-  const expanded = forceExpanded !== null ? !forceExpanded : nav.getAttribute('aria-expanded') === 'true';
-  const button = nav.querySelector('.nav-hamburger button');
-  document.body.style.overflowY = (expanded || isDesktop.matches) ? '' : 'hidden';
-  nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-  toggleAllNavSections(navSections, expanded || isDesktop.matches ? 'false' : 'true');
-  button.setAttribute('aria-label', expanded ? 'Open navigation' : 'Close navigation');
+function toggleMenu(nav, expanded) {
+  const isExpanded = expanded || nav.getAttribute('aria-expanded') === 'true';
+  document.body.style.overflowY = isExpanded ? '' : 'hidden';
+  nav.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
 }
 
 export default async function decorate(block) {
@@ -20,13 +15,18 @@ export default async function decorate(block) {
   block.textContent = '';
   const nav = document.createElement('nav');
   nav.id = 'nav';
-  while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
+  nav.setAttribute('aria-expanded', 'false');
+
+  while (fragment.firstElementChild) {
+    nav.append(fragment.firstElementChild);
+  }
 
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
   block.append(navWrapper);
 
+  // Add dropdown toggle functionality
   nav.querySelectorAll('.nav-drop').forEach((drop) => {
     drop.addEventListener('click', () => {
       const expanded = drop.getAttribute('aria-expanded') === 'true';
@@ -34,5 +34,11 @@ export default async function decorate(block) {
     });
   });
 
-  nav.setAttribute('aria-expanded', 'false');
+  // Toggle the main navigation menu
+  const toggleButton = document.createElement('button');
+  toggleButton.className = 'nav-toggle';
+  toggleButton.setAttribute('aria-label', 'Toggle navigation');
+  toggleButton.innerHTML = '☰';
+  toggleButton.addEventListener('click', () => toggleMenu(nav));
+  block.prepend(toggleButton);
 }
