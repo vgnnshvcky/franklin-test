@@ -1,17 +1,69 @@
- .information-container {
+.information-container {
   padding: 20px;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.information-container h2 {
-  margin-bottom: 16px;
-  font-size: 18px;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
   color: #333;
 }
 
-.information-container div {
+.information-container h2 {
+  margin-bottom: 24px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #222;
+  text-align: center;
+}
+
+.content-wrapper {
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+}
+
+.left-column,
+.right-column {
+  flex: 1;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.left-column ul,
+.right-column ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+
+.left-column li,
+.right-column li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+.left-column p {
+  margin-top: 16px;
   font-size: 14px;
   color: #666;
 }
+
+.right-column h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.right-column p {
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: #666;
+}
+
+.right-column ul {
+  list-style-type: disc;
+  padding-left: 20
