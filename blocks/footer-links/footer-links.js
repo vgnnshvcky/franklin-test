@@ -1,5 +1,5 @@
 export default function decorate(block) {
-  // Create main container
+  // Create a container for the transformed content
   const container = document.createElement('div');
   container.className = 'footer-links-container';
 
@@ -10,13 +10,13 @@ export default function decorate(block) {
   const rightColumn = document.createElement('div');
   rightColumn.className = 'footer-links-right';
 
-  // Iterate over each row in the block
+  // Iterate over the rows in the block
   Array.from(block.children).forEach((row) => {
-    const [leftCell, rightCell] = Array.from(row.children);
+    const [linkCell, detailCell] = Array.from(row.children);
 
-    // Extract link text and add to the left column
-    if (leftCell) {
-      const linkText = leftCell.querySelector('p')?.textContent.trim();
+    // Process the link from the first cell
+    if (linkCell) {
+      const linkText = linkCell.querySelector('p')?.textContent.trim();
       if (linkText) {
         const link = document.createElement('a');
         link.textContent = linkText;
@@ -26,9 +26,9 @@ export default function decorate(block) {
       }
     }
 
-    // Extract detail text and add to the right column
-    if (rightCell) {
-      const detailText = rightCell.querySelector('p')?.textContent.trim();
+    // Process the detail from the second cell
+    if (detailCell) {
+      const detailText = detailCell.querySelector('p')?.textContent.trim();
       if (detailText) {
         const detail = document.createElement('p');
         detail.textContent = detailText;
@@ -38,11 +38,11 @@ export default function decorate(block) {
     }
   });
 
-  // Append columns to the container
+  // Append the left and right columns to the container
   container.appendChild(leftColumn);
   container.appendChild(rightColumn);
 
-  // Replace block content with the new structure
+  // Replace block content with the transformed structure
   block.textContent = '';
   block.appendChild(container);
 }
