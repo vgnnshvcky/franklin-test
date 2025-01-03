@@ -10,25 +10,25 @@ export default function decorate(block) {
   const rightColumn = document.createElement('div');
   rightColumn.className = 'footer-links-right';
 
-  // Iterate over rows in the block
+  // Iterate over each row in the block
   Array.from(block.children).forEach((row) => {
-    const columns = Array.from(row.children);
+    const [leftCell, rightCell] = Array.from(row.children);
 
-    // Left column: Extract link text
-    if (columns[0]) {
-      const linkText = columns[0].querySelector('p')?.textContent.trim();
+    // Extract link text and add to the left column
+    if (leftCell) {
+      const linkText = leftCell.querySelector('p')?.textContent.trim();
       if (linkText) {
         const link = document.createElement('a');
         link.textContent = linkText;
-        link.href = '#'; // Placeholder URL, replace with actual links if available
+        link.href = '#'; // Placeholder, replace with actual links
         link.className = 'footer-link';
         leftColumn.appendChild(link);
       }
     }
 
-    // Right column: Extract details text
-    if (columns[1]) {
-      const detailText = columns[1].querySelector('p')?.textContent.trim();
+    // Extract detail text and add to the right column
+    if (rightCell) {
+      const detailText = rightCell.querySelector('p')?.textContent.trim();
       if (detailText) {
         const detail = document.createElement('p');
         detail.textContent = detailText;
