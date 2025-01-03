@@ -26,7 +26,7 @@
 
 .block .assistance-content {
   flex: 2;
-  padding-left: 20px;
+  padding: 20px;
 }
 
 .block .assistance-content p,
@@ -42,4 +42,5 @@
   text-decoration: none;
   color: #333;
   font-weight: bold;
+  display: inline-block;
 }
