@@ -1,0 +1,21 @@
+.newsletter > .newsletter-container {
+  background-color: #004d40;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.newsletter > .newsletter-container h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.newsletter > .newsletter-container .button {
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
