@@ -1,21 +1,4 @@
-/* Navigation Wrapper */
-.nav-wrapper {
-  background-color: #fff;
-  width: 250px;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 20px;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  overflow-y: auto;
-}
-
-/* Main Links Styling */
+/* General Navigation Styling */
 nav ul {
   list-style: none;
   padding: 0;
@@ -28,45 +11,51 @@ nav ul li {
 
 nav ul li a {
   font-family: Arial, sans-serif;
-  font-size: 16px;
-  color: #333;
+  font-size: 18px; /* Match the font size */
+  color: #333; /* Dark gray for links */
   text-decoration: none;
   padding: 8px 0;
   display: block;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 nav ul li a:hover {
-  color: #007bff;
+  color: #007bff; /* Blue hover effect */
 }
 
 /* Submenu Styling */
 .nav-drop {
   position: relative;
   cursor: pointer;
+  padding: 8px 0;
 }
 
-.nav-drop > ul {
+.nav-drop[aria-expanded='true'] {
+  background-color: #f8f9fa; /* Light gray background when expanded */
+}
+
+.nav-drop ul {
   display: none;
   margin-top: 8px;
-  padding-left: 20px;
+  padding-left: 16px; /* Indent sublinks */
 }
 
-.nav-drop[aria-expanded='true'] > ul {
-  display: block;
+.nav-drop[aria-expanded='true'] ul {
+  display: block; /* Show submenu when expanded */
 }
 
 .nav-drop ul li a {
-  font-size: 14px;
-  color: #555;
+  font-size: 16px; /* Slightly smaller font for sublinks */
+  color: #555; /* Lighter gray for sublinks */
   padding: 4px 0;
 }
 
 .nav-drop ul li a:hover {
-  color: #007bff;
+  color: #007bff; /* Blue hover effect for sublinks */
 }
 
 /* Toggle Button for Submenus */
-.nav-toggle-button {
+.nav-drop > button.nav-toggle-button {
   background: none;
   border: none;
   font-size: 12px;
@@ -76,34 +65,24 @@ nav ul li a:hover {
   transition: transform 0.3s ease;
 }
 
-.nav-toggle-button[aria-expanded='true'] {
+.nav-drop[aria-expanded='true'] > button.nav-toggle-button {
   transform: rotate(180deg); /* Rotate arrow when expanded */
 }
 
-/* Toggle Button for Mobile Navigation */
-.main-nav-toggle {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  background-color: #fff;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  z-index: 1001;
-  display: none;
+/* Button Styling */
+nav .button-container .button {
+  display: block;
+  background-color: #ffc107;
+  color: #333;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 50px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  .nav-wrapper {
-    transform: translateX(-250px);
-    transition: transform 0.3s ease;
-  }
-
-  .nav-wrapper[aria-expanded='true'] {
-    transform: translateX(0);
-  }
-
-  .main-nav-toggle {
-    display: block;
-  }
+nav .button-container .button:hover {
+  background-color: #ffca28;
 }
