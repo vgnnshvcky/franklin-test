@@ -58,5 +58,5 @@ export default async function decorate(block) {
     nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
     document.body.style.overflowY = expanded ? '' : 'hidden'; // Lock scrolling
   });
-  block.prepend(mainToggleButton);
+  // remove header toggle button block.prepend(mainToggleButton);
 }
