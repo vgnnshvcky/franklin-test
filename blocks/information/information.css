@@ -1,0 +1,17 @@
+ .information-container {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.information-container h2 {
+  margin-bottom: 16px;
+  font-size: 18px;
+  color: #333;
+}
+
+.information-container p {
+  font-size: 14px;
+  color: #666;
+}
