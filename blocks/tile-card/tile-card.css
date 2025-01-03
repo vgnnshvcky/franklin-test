@@ -1,4 +1,4 @@
-.tile-card.tile-card-container {
+.tile-card > .tile-card-container {
   display: grid; /* Use grid layout for precise column control */
   grid-template-columns: repeat(2, 1fr); /* Create 2 equal-width columns */
   gap: 24px; /* Spacing between cards */
