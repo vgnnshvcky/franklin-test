@@ -47,14 +47,15 @@
   color: #555; /* Subheading color */
 }
 
+/* Button Styling with Rounded Ends */
 .hero-content .hero-button {
   display: inline-block;
-  padding: 12px 24px;
+  padding: 12px 40px; /* Increased padding for rounded ends */
   font-size: 16px;
   font-weight: bold;
   color: #fff;
   background-color: #ffc107;
-  border-radius: 4px;
+  border-radius: 50px; /* Fully rounded left and right sides */
   text-decoration: none;
   text-align: center;
   margin-top: 16px;
@@ -66,7 +67,7 @@
 
 /* Responsive Styling */
 @media (max-width: 768px) {
-  .block .hero-container {
+ .block .hero-container {
     grid-template-columns: 1fr; /* Stack image and content vertically */
     gap: 16px;
     text-align: center;
