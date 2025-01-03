@@ -9,7 +9,7 @@ export default function decorate(block) {
   container.className = 'tile-card-container';
 
   // Iterate over block children to build cards
-  Array.from(block.children).forEach((row) => {
+  [...block.children].forEach((row) => {
     const card = document.createElement('div');
     card.className = 'tile-card';
 
