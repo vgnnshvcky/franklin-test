@@ -1,15 +1,13 @@
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
-function toggleSubMenu(drop) {
-  const expanded = drop.getAttribute('aria-expanded') === 'true';
-  drop.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-}
-
-function toggleMainMenu(nav) {
-  const expanded = nav.getAttribute('aria-expanded') === 'true';
-  nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-  document.body.style.overflowY = expanded ? '' : 'hidden'; // Lock scrolling when menu is open
+/**
+ * Toggles the visibility of a submenu
+ * @param {HTMLElement} dropdown The dropdown element
+ */
+function toggleSubMenu(dropdown) {
+  const expanded = dropdown.getAttribute('aria-expanded') === 'true';
+  dropdown.setAttribute('aria-expanded', expanded ? 'false' : 'true');
 }
 
 export default async function decorate(block) {
@@ -31,22 +29,34 @@ export default async function decorate(block) {
   navWrapper.append(nav);
   block.append(navWrapper);
 
-  // Add dropdown toggle for sub-links
-  nav.querySelectorAll('.nav-drop').forEach((drop) => {
-    const toggleButton = document.createElement('button');
-    toggleButton.className = 'nav-toggle-button';
-    toggleButton.setAttribute('aria-label', 'Toggle Submenu');
-    toggleButton.innerHTML = '▼'; // Icon for toggle
-    drop.prepend(toggleButton);
+  // Add dropdown toggle functionality for lists with sublists
+  nav.querySelectorAll('li').forEach((listItem) => {
+    const sublist = listItem.querySelector('ul');
+    if (sublist) {
+      listItem.classList.add('nav-drop');
+      listItem.setAttribute('aria-expanded', 'false');
 
-    toggleButton.addEventListener('click', () => toggleSubMenu(drop));
+      // Add a toggle button
+      const toggleButton = document.createElement('button');
+      toggleButton.className = 'nav-toggle-button';
+      toggleButton.setAttribute('aria-label', 'Expand/Collapse submenu');
+      toggleButton.innerHTML = '▼';
+      listItem.prepend(toggleButton);
+
+      // Add event listener for toggling submenu
+      toggleButton.addEventListener('click', () => toggleSubMenu(listItem));
+    }
   });
 
-  // Add toggle button for the main menu (mobile)
+  // Add hamburger menu toggle for mobile view
   const mainToggleButton = document.createElement('button');
   mainToggleButton.className = 'main-nav-toggle';
   mainToggleButton.setAttribute('aria-label', 'Toggle Navigation');
-  mainToggleButton.innerHTML = '☰'; // Hamburger icon
-  mainToggleButton.addEventListener('click', () => toggleMainMenu(nav));
+  mainToggleButton.innerHTML = '☰';
+  mainToggleButton.addEventListener('click', () => {
+    const expanded = nav.getAttribute('aria-expanded') === 'true';
+    nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+    document.body.style.overflowY = expanded ? '' : 'hidden'; // Lock scrolling
+  });
   block.prepend(mainToggleButton);
 }
