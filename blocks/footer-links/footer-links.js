@@ -10,25 +10,31 @@ export default function decorate(block) {
   const rightColumn = document.createElement('div');
   rightColumn.className = 'footer-links-right';
 
-  // Process rows in the block
+  // Iterate over rows in the block
   Array.from(block.children).forEach((row) => {
     const columns = Array.from(row.children);
 
-    // Left column: Links
+    // Left column: Extract link text
     if (columns[0]) {
-      const link = document.createElement('a');
-      link.textContent = columns[0].textContent.trim();
-      link.href = '#'; // Placeholder, can be replaced with actual URLs in Google Doc
-      link.className = 'footer-link';
-      leftColumn.appendChild(link);
+      const linkText = columns[0].querySelector('p')?.textContent.trim();
+      if (linkText) {
+        const link = document.createElement('a');
+        link.textContent = linkText;
+        link.href = '#'; // Placeholder URL, replace with actual links if available
+        link.className = 'footer-link';
+        leftColumn.appendChild(link);
+      }
     }
 
-    // Right column: Details
+    // Right column: Extract details text
     if (columns[1]) {
-      const detail = document.createElement('p');
-      detail.textContent = columns[1].textContent.trim();
-      detail.className = 'footer-detail';
-      rightColumn.appendChild(detail);
+      const detailText = columns[1].querySelector('p')?.textContent.trim();
+      if (detailText) {
+        const detail = document.createElement('p');
+        detail.textContent = detailText;
+        detail.className = 'footer-detail';
+        rightColumn.appendChild(detail);
+      }
     }
   });
 
