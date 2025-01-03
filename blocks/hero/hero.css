@@ -28,9 +28,10 @@
 .hero-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 16px;
-  text-align: left;
+  justify-content: flex-start; /* Align items to the top */
+  align-items: flex-start; /* Prevent stretching */
+  gap: 16px; /* Space between elements */
+  text-align: left; /* Align text to the left */
 }
 
 .hero-content h1 {
@@ -47,10 +48,13 @@
   color: #555; /* Subheading color */
 }
 
-/* Button Styling (Left-Aligned and Sized to Text) */
+/* Hero Content Flexbox */
+
+
+/* Button Styling (Prevent Full Width) */
 .hero-content .hero-button {
-  display: inline-block; /* Prevent full-width behavior */
-  padding: 12px 24px; /* Add space around the text */
+  display: inline-block; /* Prevent Flexbox from stretching the button */
+  padding: 12px 24px; /* Space around the text */
   font-size: 16px;
   font-weight: bold;
   color: #fff;
@@ -59,12 +63,17 @@
   text-decoration: none;
   text-align: center;
   margin-top: 16px; /* Space above the button */
-  max-width: max-content; /* Ensure button width matches the text */
+  width: auto; /* Width based on content */
+  max-width: none; /* Remove any inherited max-width */
+  flex-shrink: 0; /* Prevent shrinking in the flex container */
+  flex-grow: 0; /* Prevent stretching in the flex container */
+  box-sizing: border-box; /* Include padding in width calculations */
 }
 
 .hero-content .hero-button:hover {
   background-color: #ffca28; /* Slightly darker yellow */
 }
+
 
 
 /* Responsive Styling */
