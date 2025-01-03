@@ -1,31 +1,32 @@
-.assistance > .assistance-container {
+.block .assistance-container {
+  display: flex;
   background-color: #e0f7fa;
   padding: 40px;
-  text-align: center;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.assistance > .assistance-container h2 {
+.block .assistance-container h2 {
+  flex: 1;
   font-size: 24px;
-  margin-bottom: 16px;
+  margin-right: 20px;
   color: #004d40;
 }
 
-.assistance > .assistance-container p {
-  font-size: 16px;
+.block .assistance-content {
+  flex: 2;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.block .assistance-content p,
+.block .assistance-content strong {
   margin-bottom: 16px;
   color: #333;
 }
 
-.assistance > .assistance-container strong {
-  display: block;
-  font-size: 18px;
-  margin-bottom: 16px;
-  color: #007bff;
-}
-
-.assistance > .assistance-container .button {
+.block .assistance-content .button {
   background-color: #ffc107;
   padding: 10px 20px;
   border-radius: 4px;
