@@ -4,7 +4,7 @@ export default function decorate(block) {
   container.className = 'information-container';
 
   const title = block.querySelector('h2');
-  const content = block.querySelector('.row:last-child');
+  const content = block.lastElementChild;
 
   if (title) container.appendChild(title);
   if (content) container.appendChild(content);
