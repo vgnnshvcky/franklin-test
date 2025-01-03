@@ -19,7 +19,7 @@ export default function decorate(block) {
     if (divChildren[1]) {
       const leftColumn = document.createElement('div');
       leftColumn.className = 'left-column';
-      leftColumn.appendChild(divChildren[0]);
+      leftColumn.appendChild(divChildren[1]);
       contentWrapper.appendChild(leftColumn);
     }
   
@@ -27,7 +27,7 @@ export default function decorate(block) {
     if (divChildren[2]) {
       const rightColumn = document.createElement('div');
       rightColumn.className = 'right-column';
-      rightColumn.appendChild(divChildren[1]);
+      rightColumn.appendChild(divChildren[2]);
       contentWrapper.appendChild(rightColumn);
     }
   
