@@ -47,23 +47,25 @@
   color: #555; /* Subheading color */
 }
 
-/* Button Styling (Left-Aligned) */
+/* Button Styling (Left-Aligned and Sized to Text) */
 .hero-content .hero-button {
-  display: inline-block; /* Inline block ensures button width is based on text */
-  padding: 12px 24px; /* Adjust padding for proper sizing */
+  display: inline-block; /* Prevent full-width behavior */
+  padding: 12px 24px; /* Add space around the text */
   font-size: 16px;
   font-weight: bold;
   color: #fff;
   background-color: #ffc107;
-  border-radius: 50px; /* Fully rounded left and right sides */
+  border-radius: 50px; /* Fully rounded sides */
   text-decoration: none;
   text-align: center;
-  margin-top: 16px;
+  margin-top: 16px; /* Space above the button */
+  max-width: max-content; /* Ensure button width matches the text */
 }
 
 .hero-content .hero-button:hover {
   background-color: #ffca28; /* Slightly darker yellow */
 }
+
 
 /* Responsive Styling */
 @media (max-width: 768px) {
