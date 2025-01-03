@@ -1,10 +1,15 @@
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
-function toggleMenu(nav, expanded) {
-  const isExpanded = expanded || nav.getAttribute('aria-expanded') === 'true';
-  document.body.style.overflowY = isExpanded ? '' : 'hidden';
-  nav.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
+function toggleSubMenu(drop) {
+  const expanded = drop.getAttribute('aria-expanded') === 'true';
+  drop.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+}
+
+function toggleMainMenu(nav) {
+  const expanded = nav.getAttribute('aria-expanded') === 'true';
+  nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+  document.body.style.overflowY = expanded ? '' : 'hidden'; // Lock scrolling when menu is open
 }
 
 export default async function decorate(block) {
@@ -26,19 +31,22 @@ export default async function decorate(block) {
   navWrapper.append(nav);
   block.append(navWrapper);
 
-  // Add dropdown toggle functionality
+  // Add dropdown toggle for sub-links
   nav.querySelectorAll('.nav-drop').forEach((drop) => {
-    drop.addEventListener('click', () => {
-      const expanded = drop.getAttribute('aria-expanded') === 'true';
-      drop.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-    });
+    const toggleButton = document.createElement('button');
+    toggleButton.className = 'nav-toggle-button';
+    toggleButton.setAttribute('aria-label', 'Toggle Submenu');
+    toggleButton.innerHTML = '▼'; // Icon for toggle
+    drop.prepend(toggleButton);
+
+    toggleButton.addEventListener('click', () => toggleSubMenu(drop));
   });
 
-  // Toggle the main navigation menu
-  const toggleButton = document.createElement('button');
-  toggleButton.className = 'nav-toggle';
-  toggleButton.setAttribute('aria-label', 'Toggle navigation');
-  toggleButton.innerHTML = '☰';
-  toggleButton.addEventListener('click', () => toggleMenu(nav));
-  block.prepend(toggleButton);
+  // Add toggle button for the main menu (mobile)
+  const mainToggleButton = document.createElement('button');
+  mainToggleButton.className = 'main-nav-toggle';
+  mainToggleButton.setAttribute('aria-label', 'Toggle Navigation');
+  mainToggleButton.innerHTML = '☰'; // Hamburger icon
+  mainToggleButton.addEventListener('click', () => toggleMainMenu(nav));
+  block.prepend(mainToggleButton);
 }
