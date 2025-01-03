@@ -1,9 +1,11 @@
 .tile-card-container {
+  display: flex; /* Enable flex layout */
   gap: 24px;
   justify-content: center;
   background-color: #1e766e;
   padding: 40px;
   border-radius: 8px;
+  flex-wrap: wrap; /* Ensures tiles wrap on smaller screens */
 }
 
 .tile-card {
@@ -59,12 +61,4 @@
 }
 
 .actor-label {
-  position: absolute;
-  bottom: 8px;
-  left: 8px;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  font-size: 12px;
-  padding: 2px 8px;
-  border-radius: 4px;
-}
+  position: absolute
