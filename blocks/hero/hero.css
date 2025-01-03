@@ -1,54 +1,55 @@
+/* Hero Container */
 .hero-container {
-  position: relative;
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Default: Two-column layout */
-  align-items: center;
+  grid-template-columns: 1fr 1fr; /* Two-column layout by default */
   gap: 24px;
+  align-items: center;
   padding: 40px 24px;
   background-color: #fff;
   border-radius: 8px;
+  position: relative;
 }
 
-.hero-container .hero-image {
+/* Image Styling */
+.hero-image {
   position: relative;
   max-width: 100%;
-}
-
-.hero-container .hero-image picture,
-.hero-container .hero-image img {
-  width: 100%;
-  height: auto;
+  overflow: hidden;
   border-radius: 8px;
 }
 
-.hero-container .hero-content {
+.hero-image picture,
+.hero-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Content Styling */
+.hero-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
   gap: 16px;
+  text-align: left;
 }
 
-.hero-container h1 {
+.hero-content h1,
+.hero-content h2 {
   font-size: 36px;
   font-weight: bold;
-  color: #000;
   margin: 0;
+  color: #000;
 }
 
-.hero-container h2 {
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
-}
-
-.hero-container p {
+.hero-content p {
   font-size: 16px;
   color: #555;
   line-height: 1.6;
 }
 
-.hero-container .hero-button {
+.hero-content .hero-button {
+  display: inline-block;
   padding: 12px 24px;
   font-size: 16px;
   font-weight: bold;
@@ -57,27 +58,27 @@
   border-radius: 4px;
   text-decoration: none;
   text-align: center;
-  display: inline-block;
 }
 
-.hero-container .hero-button:hover {
+.hero-content .hero-button:hover {
   background-color: #0056b3;
 }
 
-.hero-container form {
+/* Form Styling (For ZIP Code Entry) */
+.hero-content form {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.hero-container form input[type="text"] {
-  padding: 8px;
+.hero-content form input[type="text"] {
+  padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-.hero-container form button {
+.hero-content form button {
   padding: 10px;
   font-size: 16px;
   font-weight: bold;
@@ -87,23 +88,28 @@
   border-radius: 4px;
 }
 
+/* Responsive Styling */
 @media (max-width: 768px) {
   .hero-container {
-    grid-template-columns: 1fr; /* Stacks content vertically on smaller screens */
+    grid-template-columns: 1fr; /* Stack columns vertically */
     text-align: center;
+    padding: 24px;
   }
 
-  .hero-container .hero-content {
+  .hero-content {
     align-items: center;
   }
 
-  .hero-container h1,
-  .hero-container h2,
-  .hero-container p {
+  .hero-content h1,
+  .hero-content h2 {
+    font-size: 28px;
+  }
+
+  .hero-content p {
     text-align: center;
   }
 
-  .hero-container .hero-button {
+  .hero-content .hero-button {
     align-self: center;
   }
 }
