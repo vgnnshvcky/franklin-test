@@ -1,7 +1,6 @@
 .block .news-letter-container {
   background-color: #00695c;
   padding: 20px;
-  border-radius: 8px;
   display: flex;
   justify-content: center;
 }
