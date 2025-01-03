@@ -29,21 +29,72 @@ nav ul {
 }
 
 nav ul li {
-  margin-bottom: 16px;
+  margin-bottom: 8px; /* Reduced spacing between links */
 }
 
 nav ul li a {
+  font-family: Arial, sans-serif; /* Updated font family */
+  font-size: 18px; /* Match screenshot font size */
+  font-weight: 500; /* Slightly bold for main links */
+  color: #212529; /* Darker gray for main links */
   text-decoration: none;
-  color: #000;
-  font-size: 16px;
-  font-weight: 500;
+  padding: 4px 0; /* Padding for better spacing */
   display: block;
-  padding: 8px 0;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 nav ul li a:hover {
-  color: #007bff;
+  color: #0d6efd; /* Blue hover effect */
+}
+
+/* Dropdown Styling */
+.nav-drop {
+  cursor: pointer;
+  position: relative;
+}
+
+.nav-drop > a {
+  font-weight: 600; /* Bolder font for dropdown trigger links */
+  color: #212529; /* Darker gray for dropdown links */
+}
+
+.nav-drop ul {
+  display: none;
+  margin-top: 8px;
+  padding-left: 16px;
+}
+
+.nav-drop[aria-expanded='true'] ul {
+  display: block;
+}
+
+.nav-drop ul li {
+  margin: 4px 0; /* Spacing for sub-links */
+}
+
+.nav-drop ul li a {
+  font-size: 16px; /* Slightly smaller font for sub-links */
+  font-weight: 400; /* Lighter weight for sub-links */
+  color: #6c757d; /* Lighter gray for sub-links */
+}
+
+.nav-drop ul li a:hover {
+  color: #0d6efd; /* Blue hover effect for sub-links */
+}
+
+/* Dropdown Toggle Button */
+.nav-drop > button.nav-toggle-button {
+  background: none;
+  border: none;
+  font-size: 12px;
+  color: #212529; /* Match link color */
+  cursor: pointer;
+  margin-left: 4px; /* Spacing between text and arrow */
+  transition: transform 0.3s ease;
+}
+
+.nav-drop[aria-expanded='true'] > button.nav-toggle-button {
+  transform: rotate(180deg); /* Rotate arrow when expanded */
 }
 
 /* Button Styling */
@@ -68,58 +119,7 @@ nav .button-container .button:hover {
   background-color: #ffca28;
 }
 
-/* Dropdown Styling */
-.nav-drop {
-  cursor: pointer;
-  position: relative;
-}
-
-.nav-drop ul {
-  display: none;
-  margin-top: 8px;
-  padding-left: 16px;
-}
-
-.nav-drop[aria-expanded='true'] ul {
-  display: block;
-}
-
-.nav-drop ul li {
-  margin: 8px 0;
-}
-
-.nav-drop ul li a {
-  font-weight: 400;
-  color: #555;
-}
-
-.nav-drop ul li a:hover {
-  color: #007bff;
-}
-
-/* Logo Styling */
-.nav-wrapper .logo {
-  margin-bottom: 20px;
-}
-
-.logo img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Toggle Button (Mobile) */
-.nav-toggle {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  background-color: #fff;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  z-index: 1001;
-  display: none;
-}
-
+/* Responsive Design */
 @media (max-width: 768px) {
   .nav-wrapper {
     transform: translateX(-250px);
