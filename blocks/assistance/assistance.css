@@ -1,27 +1,27 @@
-.assistance-container {
+.assistance > .assistance-container {
   background-color: #e0f7fa;
   padding: 20px;
   text-align: center;
   border-radius: 8px;
 }
 
-.assistance-container h2 {
+.assistance > .assistance-container h2 {
   font-size: 24px;
   margin-bottom: 16px;
 }
 
-.assistance-container p {
+.assistance > .assistance-container p {
   font-size: 16px;
   margin-bottom: 16px;
 }
 
-.assistance-container strong {
+.assistance > .assistance-container strong {
   display: block;
   font-size: 18px;
   margin-bottom: 16px;
 }
 
-.assistance-container .button {
+.assistance > .assistance-container .button {
   background-color: #ffc107;
   padding: 10px 20px;
   border-radius: 4px;
