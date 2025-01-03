@@ -18,15 +18,52 @@ import {
  * @param {Element} main The container element
  */
 function buildHeroBlock(main) {
-  const h1 = main.querySelector('h1');
-  const picture = main.querySelector('picture');
-  // eslint-disable-next-line no-bitwise
-  if (h1 && picture && (h1.compareDocumentPosition(picture) & Node.DOCUMENT_POSITION_PRECEDING)) {
-    const section = document.createElement('div');
-    section.append(buildBlock('hero', { elems: [picture, h1] }));
-    main.prepend(section);
+  const heroSection = main.querySelector('.hero');
+  if (!heroSection) return;
+
+  const container = document.createElement('div');
+  container.className = 'hero-container';
+
+  const wrapper = document.createElement('div');
+  wrapper.className = 'hero-wrapper';
+
+  const picture = heroSection.querySelector('picture');
+  const h1 = heroSection.querySelector('h1');
+  const subheading = heroSection.querySelector('h2');
+  const description = heroSection.querySelector('p');
+  const button = heroSection.querySelector('a');
+  const form = heroSection.querySelector('form'); // For input-based sections
+
+  // Add Picture
+  if (picture) {
+    const imageWrapper = document.createElement('div');
+    imageWrapper.className = 'hero-image';
+    imageWrapper.appendChild(picture.cloneNode(true));
+    container.appendChild(imageWrapper);
   }
+
+  // Add Content
+  const content = document.createElement('div');
+  content.className = 'hero-content';
+
+  if (h1) content.appendChild(h1.cloneNode(true));
+  if (subheading) content.appendChild(subheading.cloneNode(true));
+  if (description) content.appendChild(description.cloneNode(true));
+  if (button) {
+    const clonedButton = button.cloneNode(true);
+    clonedButton.classList.add('hero-button');
+    content.appendChild(clonedButton);
+  }
+  if (form) content.appendChild(form.cloneNode(true));
+
+  wrapper.appendChild(content);
+  container.appendChild(wrapper);
+
+  // Prepend the hero block to the main content
+  heroSection.textContent = '';
+  heroSection.appendChild(container);
 }
+
 
 /**
  * load fonts.css and set a session storage flag
