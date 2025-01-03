@@ -1,11 +1,11 @@
 .tile-card > .tile-card-container {
   display: grid; /* Grid layout for a two-column structure */
   grid-template-columns: repeat(2, 1fr); /* Two equal-width columns */
-  gap: 32px; /* Increase space between cards */
-  justify-content: center;
+  gap: 40px; /* Increase space between cards */
+  justify-content: center; /* Center-align the content */
   align-items: start; /* Align items at the top */
   background-color: #1e766e; /* Dark teal background */
-  padding: 40px 60px; /* Adjust padding for a balanced look */
+  padding: 60px 80px; /* Larger padding around the container */
   border-radius: 8px;
 }
 
@@ -17,21 +17,21 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 24px; /* Add padding inside each card */
+  padding: 32px; /* Add padding inside each card for balanced spacing */
 }
 
 .tile-card-title {
   font-size: 20px; /* Slightly larger font size for the title */
   font-weight: bold;
-  margin-bottom: 12px;
+  margin-bottom: 16px; /* Spacing between title and description */
   color: #333;
 }
 
 .tile-card-description {
-  font-size: 16px; /* Slightly larger for readability */
-  color: #555; /* Slightly darker text color for better contrast */
-  margin-bottom: 20px;
-  line-height: 1.6; /* Improve readability with line height */
+  font-size: 16px; /* Slightly larger font size for readability */
+  color: #555; /* Slightly darker text color */
+  margin-bottom: 24px; /* Spacing between description and button */
+  line-height: 1.6; /* Improved readability with line height */
 }
 
 .tile-card-button {
@@ -39,11 +39,11 @@
   color: #000;
   border: none;
   border-radius: 20px;
-  padding: 12px 24px; /* Larger padding for better visual balance */
-  font-size: 15px; /* Slightly larger font size for the button */
+  padding: 12px 24px; /* Larger padding for the button */
+  font-size: 15px; /* Slightly larger font size */
   font-weight: bold;
   cursor: pointer;
-  margin: 16px auto;
+  margin: 0 auto 24px auto; /* Space below button and center alignment */
   display: inline-block;
 }
 
@@ -55,7 +55,7 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  margin-top: 16px; /* Add spacing between the button and the image */
+  margin-top: 16px; /* Add spacing between button and image */
 }
 
 .tile-card-image picture img {
@@ -74,28 +74,31 @@
   border-radius: 4px;
 }
 
-/* Responsive behavior for smaller screens */
+/* Adjust spacing for smaller screens */
 @media (max-width: 768px) {
   .tile-card > .tile-card-container {
-    grid-template-columns: 1fr; /* Switch to single column layout */
-    gap: 16px; /* Reduce gap between cards */
-    padding: 20px; /* Reduce padding for smaller screens */
+    grid-template-columns: 1fr; /* Switch to single-column layout */
+    gap: 24px; /* Reduce gap between cards */
+    padding: 40px 20px; /* Reduce padding for smaller screens */
   }
 
   .tile-card {
-    padding: 16px; /* Adjust card padding for smaller screens */
+    padding: 20px; /* Adjust card padding for smaller screens */
   }
 
   .tile-card-title {
     font-size: 18px;
+    margin-bottom: 12px;
   }
 
   .tile-card-description {
     font-size: 14px;
+    margin-bottom: 16px;
   }
 
   .tile-card-button {
     padding: 10px 20px;
     font-size: 14px;
+    margin-bottom: 16px;
   }
 }
