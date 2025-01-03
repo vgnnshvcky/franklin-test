@@ -1,24 +1,28 @@
 .assistance > .assistance-container {
   background-color: #e0f7fa;
-  padding: 20px;
+  padding: 40px;
   text-align: center;
   border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .assistance > .assistance-container h2 {
   font-size: 24px;
   margin-bottom: 16px;
+  color: #004d40;
 }
 
 .assistance > .assistance-container p {
   font-size: 16px;
   margin-bottom: 16px;
+  color: #333;
 }
 
 .assistance > .assistance-container strong {
   display: block;
   font-size: 18px;
   margin-bottom: 16px;
+  color: #007bff;
 }
 
 .assistance > .assistance-container .button {
