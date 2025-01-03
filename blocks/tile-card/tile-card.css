@@ -1,11 +1,11 @@
 .tile-card-container {
-  display: flex; /* Enable flex layout */
-  gap: 24px;
-  justify-content: center;
-  background-color: #1e766e;
+  display: grid; /* Use grid layout for precise column control */
+  grid-template-columns: repeat(2, 1fr); /* Create 2 equal-width columns */
+  gap: 24px; /* Spacing between cards */
+  justify-content: center; /* Center align cards in the container */
+  background-color: #1e766e; /* Dark teal background */
   padding: 40px;
   border-radius: 8px;
-  flex-wrap: wrap; /* Ensures tiles wrap on smaller screens */
 }
 
 .tile-card {
@@ -13,23 +13,23 @@
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 16px; /* Add padding inside each card */
 }
 
 .tile-card-title {
   font-size: 18px;
   font-weight: bold;
-  margin: 16px;
+  margin-bottom: 16px;
   color: #333;
 }
 
 .tile-card-description {
   font-size: 14px;
   color: #666;
-  margin: 0 16px 16px;
+  margin-bottom: 16px;
 }
 
 .tile-card-button {
@@ -39,26 +39,4 @@
   border-radius: 20px;
   padding: 10px 20px;
   font-size: 14px;
-  font-weight: bold;
-  cursor: pointer;
-  margin: 16px auto;
-}
-
-.tile-card-button:hover {
-  background-color: #ffca28;
-}
-
-.tile-card-image {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.tile-card-image picture img {
-  width: 100%;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-}
-
-.actor-label {
-  position: absolute
+  font-weigh
