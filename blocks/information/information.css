@@ -1,4 +1,4 @@
-.information-container {
+.block .information-container {
   padding: 20px;
   background-color: #f2f2f2; /* Light grey background for the entire section */
   border-radius: 8px;
@@ -7,7 +7,7 @@
   color: #333;
 }
 
-.information-container h2 {
+.block .information-container h2 {
   margin-bottom: 24px;
   font-size: 22px;
   font-weight: bold;
@@ -15,14 +15,14 @@
   text-align: left; /* Left-align the heading */
 }
 
-.content-wrapper {
+.block .information-container .content-wrapper {
   display: flex;
   gap: 24px;
   justify-content: space-between;
 }
 
-.left-column,
-.right-column {
+.block .information-container .left-column,
+.block .information-container .right-column {
   flex: 1;
   padding: 20px;
   background-color: #fff; /* White background for columns */
@@ -30,40 +30,40 @@
   border-radius: 8px;
 }
 
-.left-column ul,
-.right-column ul {
+.block .information-container .left-column ul,
+.block .information-container .right-column ul {
   list-style-type: disc;
   padding-left: 20px;
   margin-bottom: 16px;
 }
 
-.left-column li,
-.right-column li {
+.block .information-container .left-column li,
+.block .information-container .right-column li {
   margin-bottom: 10px;
   font-size: 14px;
   color: #555;
 }
 
-.left-column p {
+.block .information-container .left-column p {
   margin-top: 16px;
   font-size: 14px;
   color: #666;
 }
 
-.right-column h3 {
+.block .information-container .right-column h3 {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 16px;
   color: #333;
 }
 
-.right-column p {
+.block .information-container .right-column p {
   margin-bottom: 16px;
   font-size: 14px;
   color: #666;
 }
 
-.right-column ul {
+.block .information-container .right-column ul {
   list-style-type: disc;
   padding-left: 20px;
 }
