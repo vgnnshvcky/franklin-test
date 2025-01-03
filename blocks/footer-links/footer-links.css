@@ -1,4 +1,4 @@
-.footer-links-container {
+.footer-links > .footer-links-container {
   display: grid;
   grid-template-columns: 1fr 3fr; /* Two-column layout: 1 part for links, 3 parts for details */
   gap: 24px;
