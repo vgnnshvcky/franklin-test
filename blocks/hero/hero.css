@@ -1,5 +1,5 @@
 /* Hero Container */
-.block .hero-container {
+.hero-container {
   display: grid;
   grid-template-columns: 1fr 1fr; /* Two equal columns */
   gap: 24px;
@@ -47,10 +47,10 @@
   color: #555; /* Subheading color */
 }
 
-/* Button Styling with Rounded Ends */
+/* Button Styling (Left-Aligned) */
 .hero-content .hero-button {
-  display: inline-block;
-  padding: 12px 40px; /* Increased padding for rounded ends */
+  display: inline-block; /* Inline block ensures button width is based on text */
+  padding: 12px 24px; /* Adjust padding for proper sizing */
   font-size: 16px;
   font-weight: bold;
   color: #fff;
@@ -67,7 +67,7 @@
 
 /* Responsive Styling */
 @media (max-width: 768px) {
- .block .hero-container {
+  .hero-container {
     grid-template-columns: 1fr; /* Stack image and content vertically */
     gap: 16px;
     text-align: center;
