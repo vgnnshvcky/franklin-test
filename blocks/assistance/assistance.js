@@ -12,8 +12,12 @@ export default function decorate(block) {
     }
   });
 
-  container.appendChild(header);
-  container.appendChild(content);
+  const innerContainer = document.createElement('div');
+  innerContainer.className = 'assistance-inner';
+  innerContainer.appendChild(header);
+  innerContainer.appendChild(content);
+
+  container.appendChild(innerContainer);
 
   block.textContent = '';
   block.appendChild(container);
