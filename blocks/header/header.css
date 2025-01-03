@@ -1,8 +1,7 @@
-/* header and nav layout */
 header .nav-wrapper {
   background-color: var(--background-color);
-  width: 250px; /* Set a fixed width for the sidebar */
-  height: 100vh; /* Full height */
+  width: 250px;
+  height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
@@ -47,7 +46,6 @@ header nav .button:hover {
   background-color: #e0a800;
 }
 
-/* Dropdown styling */
 header nav .nav-drop {
   cursor: pointer;
   position: relative;
