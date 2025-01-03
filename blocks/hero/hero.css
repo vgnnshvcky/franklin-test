@@ -1,13 +1,12 @@
 /* Hero Container */
 .block .hero-container {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Two-column layout by default */
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
   gap: 24px;
   align-items: center;
-  padding: 40px 24px;
+  padding: 40px;
   background-color: #fff;
   border-radius: 8px;
-  position: relative;
 }
 
 /* Image Styling */
@@ -15,7 +14,6 @@
   position: relative;
   max-width: 100%;
   overflow: hidden;
-  border-radius: 8px;
 }
 
 .hero-image picture,
@@ -23,6 +21,7 @@
   width: 100%;
   height: auto;
   object-fit: cover;
+  border-radius: 8px;
 }
 
 /* Content Styling */
@@ -34,18 +33,18 @@
   text-align: left;
 }
 
-.hero-content h1,
-.hero-content h2 {
-  font-size: 36px;
+.hero-content h1 {
+  font-size: 28px;
   font-weight: bold;
   margin: 0;
-  color: #000;
+  color: #004d40; /* Dark teal color */
 }
 
-.hero-content p {
-  font-size: 16px;
-  color: #555;
-  line-height: 1.6;
+.hero-content h2 {
+  font-size: 20px;
+  font-weight: normal;
+  margin: 0;
+  color: #555; /* Subheading color */
 }
 
 .hero-content .hero-button {
@@ -54,46 +53,23 @@
   font-size: 16px;
   font-weight: bold;
   color: #fff;
-  background-color: #007bff;
+  background-color: #ffc107;
   border-radius: 4px;
   text-decoration: none;
   text-align: center;
+  margin-top: 16px;
 }
 
 .hero-content .hero-button:hover {
-  background-color: #0056b3;
-}
-
-/* Form Styling (For ZIP Code Entry) */
-.hero-content form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.hero-content form input[type="text"] {
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.hero-content form button {
-  padding: 10px;
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff;
-  background-color: #007bff;
-  border: none;
-  border-radius: 4px;
+  background-color: #ffca28; /* Slightly darker yellow */
 }
 
 /* Responsive Styling */
 @media (max-width: 768px) {
   .block .hero-container {
-    grid-template-columns: 1fr; /* Stack columns vertically */
+    grid-template-columns: 1fr; /* Stack image and content vertically */
+    gap: 16px;
     text-align: center;
-    padding: 24px;
   }
 
   .hero-content {
@@ -102,10 +78,6 @@
 
   .hero-content h1,
   .hero-content h2 {
-    font-size: 28px;
-  }
-
-  .hero-content p {
     text-align: center;
   }
 
