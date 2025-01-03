@@ -2,18 +2,18 @@ export default function decorate(block) {
   const container = document.createElement('div');
   container.className = 'assistance-container';
 
-  const title = block.querySelector('h2');
-  const description = block.querySelector('p');
-  const phone = block.querySelector('strong');
-  const button = block.querySelector('a');
+  const header = block.querySelector('h2');
+  const content = document.createElement('div');
+  content.className = 'assistance-content';
 
-  if (title) container.appendChild(title);
-  if (description) container.appendChild(description);
-  if (phone) container.appendChild(phone);
-  if (button) {
-    button.className = 'button';
-    container.appendChild(button);
-  }
+  [...block.children].forEach((child) => {
+    if (child !== header) {
+      content.appendChild(child);
+    }
+  });
+
+  container.appendChild(header);
+  container.appendChild(content);
 
   block.textContent = '';
   block.appendChild(container);
