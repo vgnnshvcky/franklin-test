@@ -1,7 +1,6 @@
 .block .information-container {
   padding: 20px;
-  background-color: #f2f2f2; /* Light grey background for the entire section */
-  border-radius: 8px;
+  background-color: var(--light-color); /* Light grey background for the entire section */
   font-family: Arial, sans-serif;
   line-height: 1.5;
   color: #333;
