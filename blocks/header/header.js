@@ -1,10 +1,6 @@
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
-/**
- * Toggles the visibility of a submenu
- * @param {HTMLElement} dropdown The dropdown element
- */
 function toggleSubMenu(dropdown) {
   const expanded = dropdown.getAttribute('aria-expanded') === 'true';
   dropdown.setAttribute('aria-expanded', expanded ? 'false' : 'true');
@@ -47,16 +43,4 @@ export default async function decorate(block) {
       toggleButton.addEventListener('click', () => toggleSubMenu(listItem));
     }
   });
-
-  // Add hamburger menu toggle for mobile view
-  const mainToggleButton = document.createElement('button');
-  mainToggleButton.className = 'main-nav-toggle';
-  mainToggleButton.setAttribute('aria-label', 'Toggle Navigation');
-  mainToggleButton.innerHTML = '☰';
-  mainToggleButton.addEventListener('click', () => {
-    const expanded = nav.getAttribute('aria-expanded') === 'true';
-    nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-    document.body.style.overflowY = expanded ? '' : 'hidden'; // Lock scrolling
-  });
-  block.prepend(mainToggleButton);
 }
