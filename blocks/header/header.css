@@ -15,13 +15,7 @@
   overflow-y: auto;
 }
 
-/* Navigation Styling */
-nav {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
+/* Main Links Styling */
 nav ul {
   list-style: none;
   padding: 0;
@@ -32,84 +26,61 @@ nav ul li {
   margin-bottom: 16px;
 }
 
-/* Links Above and Below Button */
 nav ul li a {
-  font-family: Arial, sans-serif; /* Consistent font style */
-  font-size: 16px; /* Matching font size */
-  color: #333; /* Dark gray color */
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
   text-decoration: none;
   padding: 8px 0;
   display: block;
 }
 
 nav ul li a:hover {
-  color: #007bff; /* Blue color on hover */
+  color: #007bff;
 }
 
-nav ul li strong a {
-  font-size: 14px; /* Slightly smaller font for footer links */
-  color: #555; /* Lighter gray color for footer links */
-  font-weight: normal;
-}
-
-/* Button Styling */
-nav .button-container .button {
-  display: block;
-  background-color: #ffc107;
-  color: #333;
-  padding: 12px 24px;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 50px;
-  text-align: center;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-nav .button-container .button:hover {
-  background-color: #ffca28;
-}
-
-/* Sub-Link Styling */
+/* Submenu Styling */
 .nav-drop {
   position: relative;
   cursor: pointer;
 }
 
-.nav-drop > button.nav-toggle-button {
-  background: none;
-  border: none;
-  font-size: 12px;
-  cursor: pointer;
-  margin-left: 8px;
-  color: #333;
-  transition: transform 0.3s ease;
-}
-
-.nav-drop > button.nav-toggle-button[aria-expanded='true'] {
-  transform: rotate(180deg); /* Rotate icon when expanded */
-}
-
-.nav-drop ul {
+.nav-drop > ul {
   display: none;
   margin-top: 8px;
   padding-left: 20px;
 }
 
-.nav-drop[aria-expanded='true'] ul {
+.nav-drop[aria-expanded='true'] > ul {
   display: block;
 }
 
 .nav-drop ul li a {
   font-size: 14px;
-  color: #555; /* Lighter gray for sub-links */
+  color: #555;
+  padding: 4px 0;
 }
 
 .nav-drop ul li a:hover {
-  color: #007bff; /* Blue color on hover */
+  color: #007bff;
 }
 
-/* Toggle Button (Mobile) */
+/* Toggle Button for Submenus */
+.nav-toggle-button {
+  background: none;
+  border: none;
+  font-size: 12px;
+  color: #333;
+  cursor: pointer;
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.nav-toggle-button[aria-expanded='true'] {
+  transform: rotate(180deg); /* Rotate arrow when expanded */
+}
+
+/* Toggle Button for Mobile Navigation */
 .main-nav-toggle {
   position: fixed;
   top: 20px;
