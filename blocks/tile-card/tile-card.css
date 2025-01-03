@@ -1,61 +1,66 @@
 .tile-card > .tile-card-container {
-  display: grid; /* Use grid layout for two-column structure */
-  grid-template-columns: repeat(2, 1fr); /* Create 2 equal-width columns */
-  gap: 24px; /* Space between tiles */
-  justify-content: center; /* Center-align the content */
+  display: grid; /* Grid layout for a two-column structure */
+  grid-template-columns: repeat(2, 1fr); /* Two equal-width columns */
+  gap: 32px; /* Increase space between cards */
+  justify-content: center;
+  align-items: start; /* Align items at the top */
   background-color: #1e766e; /* Dark teal background */
-  padding: 40px;
+  padding: 40px 60px; /* Adjust padding for a balanced look */
   border-radius: 8px;
 }
 
 .tile-card {
-  background-color: #fff;
+  background-color: #fff; /* White background for cards */
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 24px; /* Add padding inside each card */
 }
 
 .tile-card-title {
-  font-size: 18px;
+  font-size: 20px; /* Slightly larger font size for the title */
   font-weight: bold;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   color: #333;
 }
 
 .tile-card-description {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 16px;
+  font-size: 16px; /* Slightly larger for readability */
+  color: #555; /* Slightly darker text color for better contrast */
+  margin-bottom: 20px;
+  line-height: 1.6; /* Improve readability with line height */
 }
 
 .tile-card-button {
-  background-color: #ffc107;
+  background-color: #ffc107; /* Bright yellow button */
   color: #000;
   border: none;
   border-radius: 20px;
-  padding: 10px 20px;
-  font-size: 14px;
+  padding: 12px 24px; /* Larger padding for better visual balance */
+  font-size: 15px; /* Slightly larger font size for the button */
   font-weight: bold;
   cursor: pointer;
-  margin: 0 auto;
+  margin: 16px auto;
+  display: inline-block;
 }
 
 .tile-card-button:hover {
-  background-color: #ffca28;
+  background-color: #ffca28; /* Slightly darker yellow on hover */
 }
 
 .tile-card-image {
   position: relative;
   width: 100%;
   overflow: hidden;
+  margin-top: 16px; /* Add spacing between the button and the image */
 }
 
 .tile-card-image picture img {
   width: 100%;
-  border-radius: 12px 12px 0 0; /* Rounded top corners */
+  border-radius: 12px; /* Rounded corners for the image */
 }
 
 .actor-label {
@@ -65,7 +70,7 @@
   background-color: rgba(0, 0, 0, 0.6);
   color: #fff;
   font-size: 12px;
-  padding: 2px 8px;
+  padding: 4px 8px;
   border-radius: 4px;
 }
 
@@ -73,5 +78,24 @@
 @media (max-width: 768px) {
   .tile-card > .tile-card-container {
     grid-template-columns: 1fr; /* Switch to single column layout */
+    gap: 16px; /* Reduce gap between cards */
+    padding: 20px; /* Reduce padding for smaller screens */
+  }
+
+  .tile-card {
+    padding: 16px; /* Adjust card padding for smaller screens */
+  }
+
+  .tile-card-title {
+    font-size: 18px;
+  }
+
+  .tile-card-description {
+    font-size: 14px;
+  }
+
+  .tile-card-button {
+    padding: 10px 20px;
+    font-size: 14px;
   }
 }
