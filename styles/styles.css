@@ -78,7 +78,14 @@ body {
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
   line-height: 1.6;
-  max-height: 72%;
+  max-width: 72%;
+  border-left-color: rgb(229, 229, 229);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-right-color: rgb(229, 229, 229);
+  border-right-style: solid;
+  border-right-width: 1px;
+  margin: auto;
 }
 
 body.appear {
