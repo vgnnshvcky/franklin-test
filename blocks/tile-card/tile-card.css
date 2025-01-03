@@ -1,0 +1,71 @@
+.tile-card-container {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  background-color: #1e766e;
+  padding: 40px;
+  border-radius: 8px;
+}
+
+.tile-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tile-card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 16px;
+  color: #333;
+}
+
+.tile-card-description {
+  font-size: 14px;
+  color: #666;
+  margin: 0 16px 16px;
+}
+
+.tile-card-button {
+  background-color: #ffc107;
+  color: #000;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 16px auto;
+}
+
+.tile-card-button:hover {
+  background-color: #ffca28;
+}
+
+.tile-card-image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.tile-card-image picture img {
+  width: 100%;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.actor-label {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
