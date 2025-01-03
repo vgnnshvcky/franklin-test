@@ -12,8 +12,8 @@ export default function decorate(block) {
   const contentWrapper = document.createElement('div');
   contentWrapper.className = 'content-wrapper';
 
-   // Get all <div> children of the block
-  const divChildren = block.querySelectorAll('div');
+  // Filter children to include only <div> elements
+  const divChildren = Array.from(block.children).filter((child) => child.tagName === 'DIV');
 
   // Treat the first <div> as the left column
   if (divChildren[0]) {
