@@ -1,0 +1,68 @@
+.hero-with-form-container {
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+}
+
+.hero-with-form-container picture {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.hero-with-form-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero-with-form-content h1 {
+  font-size: 24px;
+  color: #004d40;
+  margin-bottom: 16px;
+}
+
+.hero-with-form-content p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.hero-with-form-content small {
+  display: block;
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.hero-with-form-content input {
+  margin-bottom: 16px;
+  padding: 8px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.hero-with-form-content a[href="#"] {
+  display: block;
+  margin-bottom: 16px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.hero-with-form-content a[href="#"]:hover {
+  text-decoration: underline;
+}
+
+.hero-with-form-content .button {
+  background-color: #ffc107;
+  padding: 10px 20px;
+  border-radius: 24px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  display: inline-block;
+}
