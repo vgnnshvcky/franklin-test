@@ -1,34 +1,35 @@
 .block .assistance-container {
   background-color: #e0f7fa;
-  padding: 20px;
+  padding: 2rem;
   display: flex;
   justify-content: center;
 }
 
 .block .assistance-inner {
   background-color: #fff;
-  padding: 20px;
+  padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
+  gap: 2rem;
 }
 
 .block .assistance-inner h2 {
   flex: 1;
-  font-size: 24px;
+  font-size: 3rem;
   color: #000;
   margin: 0;
 }
 
 .block .assistance-content {
   flex: 2;
-  padding: 20px;
 }
 
 .block .assistance-content p,
 .block .assistance-content strong {
+  margin: 0;
   margin-bottom: 16px;
   color: #333;
 }
@@ -39,6 +40,6 @@
   border-radius: 24px;
   text-decoration: none;
   color: #333;
-  font-weight: bold;
   display: inline-block;
+  font-size: 14px;
 }
