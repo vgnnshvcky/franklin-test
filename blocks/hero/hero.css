@@ -51,12 +51,12 @@
 
 
 /* Button Styling (Prevent Full Width) */
-.hero-content .hero-button {
+.hero-content a.hero-button {
   display: inline-block; /* Prevent Flexbox from stretching the button */
   padding: 12px 24px; /* Space around the text */
   font-size: 16px;
   font-weight: bold;
-  color: #fff;
+  color: #000;
   background-color: #ffc107;
   border-radius: 50px; /* Fully rounded sides */
   text-decoration: none;
