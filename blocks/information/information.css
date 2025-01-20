@@ -1,17 +1,20 @@
 .block .information-container {
   padding: 20px;
-  background-color: var(--light-color); /* Light grey background for the entire section */
   font-family: Arial, sans-serif;
   line-height: 1.5;
   color: #333;
 }
 
+.information-wrapper{
+  border-top: 4px solid #fdd756;
+  background-color: var(--light-color); /* Light grey background for the entire section */
+}
+
 .block .information-container h2 {
+  margin: .5rem;
+  text-transform: uppercase;
+  font-size: 0.875rem;
   margin-bottom: 24px;
-  font-size: 22px;
-  font-weight: bold;
-  color: #222;
-  text-align: left; /* Left-align the heading */
 }
 
 .block .information-container .content-wrapper {
@@ -22,10 +25,10 @@
 
 .block .information-container .left-column,
 .block .information-container .right-column {
-  flex: 1;
+  /* flex: 1; */
   padding: 20px;
   background-color: #fff; /* White background for columns */
-  border: 1px solid #ddd;
+  /* border: 1px solid #ddd; */
   border-radius: 8px;
 }
 
