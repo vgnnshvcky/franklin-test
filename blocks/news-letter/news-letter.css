@@ -7,7 +7,7 @@
 
 .block .news-letter-inner {
   background-color: #fff;
-  padding: 20px;
+  padding: 3rem;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
@@ -15,18 +15,24 @@
 }
 
 .block .news-letter-inner h2 {
-  font-size: 24px;
+  font-size: 3rem;
   color: #000;
   margin-bottom: 16px;
 }
 
 .block .news-letter-inner .button {
   background-color: #fff;
-  border: 2px solid #000;
-  padding: 10px 20px;
-  border-radius: 24px;
+  border: 2px solid #415364;
+  padding: 13px 24px;
+  border-radius: 46px;
   text-decoration: none;
-  color: #000;
+  color: #415364;
   font-weight: bold;
   display: inline-block;
+  width: 230px;
+}
+
+.news-letter-inner  .button:hover{
+  background: #415364;
+  color: #fff;
 }
