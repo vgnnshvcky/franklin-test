@@ -1,0 +1,32 @@
+ .footer-link {
+  display: flex;
+  gap: 3rem;
+}
+
+.footer-link ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-link li{
+  color: #5b5958;
+  line-height: 1.2;
+  padding: .5rem 0;
+  font-size: 1.2rem;
+  text-decoration: underline;
+}
+
+.footer-link img{
+  height: 54px;
+  width: 132px;
+}
+
+.footer-link p{
+  font-style: italic;
+  font-weight: 800;
+  color: #5b5958;
+  font-size: 0.75rem;
+  line-height: 24px;
+  padding-bottom: 1.5rem;
+}
