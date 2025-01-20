@@ -1,8 +1,8 @@
 /* General Wrapper */
 .nav-wrapper {
   background-color: #fff;
-  width: 12%;
-  margin-left: 14%;
+  width: 285px;
+  margin-left: 11%;
   height: 100vh;
   position: fixed;
   top: 0;
@@ -34,6 +34,9 @@ nav ul li {
   line-height: 1.3; /* Line height for all list items */
   margin-bottom: 8px;
   text-align: left; /* Ensure all text is left-aligned */
+  position: relative;
+  padding-right: 5px;
+  width: 100%;
 }
 
 /* Override a:any-link styles specifically for nav links */
@@ -54,12 +57,31 @@ nav ul li {
 /* Submenu Styling */
 .nav-drop ul {
   display: none;
-  margin-top: 8px;
-  padding-left: 16px;
 }
 
 .nav-drop[aria-expanded='true'] ul {
   display: block;
+}
+
+.nav-drop[aria-expanded='true'] {
+  font-weight: 500;
+}
+
+
+.nav-drop[aria-expanded='true'] ul li a {
+  font-size: 14px;
+}
+
+.nav-drop[aria-expanded='true']::after{
+    content: '';
+    position: absolute;
+    top: -5px;
+    bottom: 0;
+    left: -20px;
+    right: -14px;
+    height: 110%;
+    background-color: #f5f5f5;
+    z-index: -1;
 }
 
 .nav-drop ul li {
@@ -85,8 +107,11 @@ nav ul li {
   font-size: 12px;
   color: #415364; /* Match link color */
   cursor: pointer;
-  margin-left: 4px;
+  margin: 3px;
+  padding: 0;
   transition: transform 0.3s ease;
+  position: absolute;
+  right: 0;
 }
 
 .nav-drop[aria-expanded='true'] > button.nav-toggle-button {
@@ -129,4 +154,26 @@ nav .button-container .button:hover {
   .nav-toggle {
     display: block;
   }
+}
+
+.nav-utility-link ul li a{
+  padding: 0!important;
+}
+
+.nav-utility-link ul li{
+  margin-bottom: 20px!important;
+}
+
+.nav-utility-link ul li ul li{
+  margin-bottom: 5px!important;
+}
+
+.nav-utility-link ul li::before{
+    content: '';
+    display: block;
+    position: absolute;
+    left: -5px;
+    border-left: 2px solid #00acb3;
+    height: 100%;
+    width: 0;
 }
