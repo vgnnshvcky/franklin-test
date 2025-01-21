@@ -4,10 +4,84 @@
   line-height: 1.5;
   color: #333;
 }
-
-.information-wrapper{
+.information-container a{
+  text-decoration: underline;
+}
+.block.information{
   border-top: 4px solid #fdd756;
   background-color: var(--light-color); /* Light grey background for the entire section */
+}
+
+.block.information{
+    box-sizing: border-box;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding-bottom:4rem;
+    z-index: 101;
+    background-color: #f5f5f5;
+}
+
+.information[data-state='expanded'], .information[data-state='collapsed'] {
+  left: 285px;
+  width: calc(100% - 285px);
+  padding-bottom: 0;
+  height: 80px;
+}
+
+.information[data-state='expanded'] button{
+  padding-top: 12px;
+}
+
+.information[data-state='partial'] button{
+  display: none;
+}
+
+
+#minus,#plus{
+  display: none;
+}
+
+#minus{
+  margin-top: 5px;
+}
+
+.information[data-state='expanded'] #minus{
+  display: block;
+}
+
+.information[data-state='collapsed'] #plus{
+  display: block;
+}
+
+.information-head{
+  display: flex;
+  justify-content: space-between;
+}
+
+.information-head button{
+    display: flex;
+    justify-content: center;
+    height: 32px;
+    max-width: 56px;
+    margin: 0;
+    border: 2px solid #415364;
+    border-radius: 20px;
+    background-color: transparent;
+    color: #415364;
+    font-size: 87.5%;
+    font-style: normal;
+}
+
+.information-head button:hover{
+  background-color: #415364;
+  color: #fff;
+}
+
+.information-head button svg{
+ height: 22px;
+ width: 22px;
 }
 
 .block .information-container h2 {
