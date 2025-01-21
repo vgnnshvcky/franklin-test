@@ -59,6 +59,12 @@ export default async function decorate(block) {
     document.body.style.overflowY = expanded ? '' : 'hidden'; // Lock scrolling
   });
   // remove header toggle button block.prepend(mainToggleButton);
+  const rect = document.body.getBoundingClientRect();
+  navWrapper.style.left=rect.x - 40 + 'px'
+  window.addEventListener('resize',()=>{
+    const rect = document.body.getBoundingClientRect();
+    navWrapper.style.left=Math.max(rect.x - 40,-10) + 'px'
+  })
 }
 
 function brandLogo(){
