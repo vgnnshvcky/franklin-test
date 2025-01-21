@@ -2,7 +2,7 @@
 .nav-wrapper {
   background-color: #fff;
   width: 285px;
-  margin-left: 11%;
+  /* margin-left: 11%; */
   height: 100vh;
   position: fixed;
   top: 0;
@@ -168,6 +168,10 @@ nav .button-container .button:hover {
   margin-bottom: 5px!important;
 }
 
+.nav-utility-link ul li ul li::before{
+  border: none!important;
+}
+
 .nav-utility-link ul li::before{
     content: '';
     display: block;
@@ -176,4 +180,17 @@ nav .button-container .button:hover {
     border-left: 2px solid #00acb3;
     height: 100%;
     width: 0;
+}
+
+.nav-utility-link ul li img{
+  max-width: 200px;
+  max-height: 80px;
+}
+
+.nav-utility-link ul li:last-child::before{
+  border: none;
+  width: 100%;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  left: -20px;
 }
