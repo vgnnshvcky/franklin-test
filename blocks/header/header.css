@@ -14,6 +14,55 @@
   padding: 20px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 1099px) {
+  .nav-wrapper{
+    width: 100%;
+    z-index: 100;
+    height: auto;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+  .navHeader{
+    display: grid;
+    grid-template-columns: 250px auto;
+    align-items: center;
+  }
+
+  .mainToggle{
+    margin-left: auto;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: all .2s ease-in-out ;
+  }
+
+  .mainToggle:hover{
+    opacity: .5;
+  }
+
+  nav .section{
+    max-width: 360px;
+  }
+
+  nav[aria-expanded="true"] .section{
+    display: block;
+  }
+
+  nav[aria-expanded="true"] .mainToggle{
+    transform: rotate(90deg);
+    transition: transform .5s ease-in-out ;
+  }
+
+  nav[aria-expanded="false"] .section{
+    display: none;
+  }
+
+  main{
+    margin-top: 120px;
+  }
+
 }
 
 /* Navigation Styling */
@@ -143,16 +192,7 @@ nav .button-container .button:hover {
 /* Responsive Design */
 @media (max-width: 768px) {
   .nav-wrapper {
-    transform: translateX(-250px);
-    transition: transform 0.3s ease;
-  }
-
-  .nav-wrapper[aria-expanded='true'] {
-    transform: translateX(0);
-  }
-
-  .nav-toggle {
-    display: block;
+    transition: all 0.3s ease;
   }
 }
 
