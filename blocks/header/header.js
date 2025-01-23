@@ -19,7 +19,7 @@ export default async function decorate(block) {
   const nav = document.createElement('nav');
   nav.id = 'nav';
   nav.setAttribute('aria-expanded', 'false');
-  nav.innerHTML=brandLogo();
+  nav.innerHTML=`<div class="navHeader">${brandLogo()} <span class="mainToggle" id="mainToggle">☰</span></div>`;
   while (fragment.firstElementChild) {
     nav.append(fragment.firstElementChild);
   }
@@ -49,10 +49,7 @@ export default async function decorate(block) {
   });
 
   // Add hamburger menu toggle for mobile view
-  const mainToggleButton = document.createElement('button');
-  mainToggleButton.className = 'main-nav-toggle';
-  mainToggleButton.setAttribute('aria-label', 'Toggle Navigation');
-  mainToggleButton.innerHTML = '☰';
+  const mainToggleButton = document.getElementById('mainToggle');
   mainToggleButton.addEventListener('click', () => {
     const expanded = nav.getAttribute('aria-expanded') === 'true';
     nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
@@ -60,10 +57,10 @@ export default async function decorate(block) {
   });
   // remove header toggle button block.prepend(mainToggleButton);
   const rect = document.body.getBoundingClientRect();
-  navWrapper.style.left=rect.x - 40 + 'px'
+  navWrapper.style.left=rect.x + 'px'
   window.addEventListener('resize',()=>{
     const rect = document.body.getBoundingClientRect();
-    navWrapper.style.left=Math.max(rect.x - 40,-10) + 'px'
+    navWrapper.style.left=Math.max(rect.x,0) + 'px'
   })
 }
 
