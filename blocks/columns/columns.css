@@ -7,6 +7,9 @@
   width: 100%;
 }
 
+.columns p{
+  padding: 0 20px;
+}
 .columns > div > div {
   order: 1;
 }
